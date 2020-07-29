@@ -2,13 +2,11 @@ os: linux
 dist: xenial
 group: edge
 services:
+  - mysql
   - elasticsearch
 addons:
   apt:
     packages:
-      - mysql-server-5.7
-      - mysql-client-core-5.7
-      - mysql-client-5.7
       - postfix
   hosts:
     - magento2.travis
@@ -37,7 +35,7 @@ cache:
     - $HOME/.composer/cache
 before_script:
   - |
-    sleep 10
+    sleep 20
     ./.travis/before_script.sh
 script: phpunit -c magento2/dev/tests/$TEST_SUITE --coverage-text --coverage-clover=/tmp/coverage.clover
 after_script:
