@@ -10,8 +10,6 @@ addons:
       - mysql-client-core-5.6
       - mysql-client-5.6
       - postfix
-      - php-gd
-      - php-zip
   hosts:
     - magento2.travis
 language: php
