@@ -35,7 +35,7 @@ cache:
     - $HOME/.composer/cache
 before_script:
   - |
-    sleep 20
+    sleep 10
     ./.travis/before_script.sh
 script: phpunit -c magento2/dev/tests/$TEST_SUITE --coverage-text --coverage-clover=/tmp/coverage.clover
 after_script:
